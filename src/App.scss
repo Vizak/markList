@@ -1,7 +1,40 @@
 .App {
 	text-align: center;
-
-	button {
-		font-weight: bold;
-	}
 }
+
+	.titleStyle {
+		display: inline-block;
+		border-collapse: collapse;
+		padding-left: 120px;
+		word-spacing: 120px;
+		font-size: 20px;
+	}
+
+	.numberStyle {
+		border: 2px solid lavender;
+		background: wheat;
+		width: 10px;
+		color:black;
+		text-align: right;
+		padding-left: 86px;
+		padding-right: 20px;
+	}
+
+	.stringStyle {
+		border: 2px solid lavender;
+		background-color: wheat;
+		width: 45px;
+		color:black;
+		text-align: left;
+		padding-left: 5px;
+	}
+
+	.tableHeaderStyle {
+		border: 2px solid lavender;
+		background: wheat;
+		width: 30px;
+		color:black;
+		margin: auto;
+		text-align: center;
+	}
+
