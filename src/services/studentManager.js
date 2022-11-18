@@ -15,9 +15,9 @@ const getResult = (student) => (Math.min(
 	? 'PASS'
 	: 'FAIL');
 
-const updatedSheet = (students) => {
+const updatedSheet = (studentsData) => {
 	let rank = 1;
-	const sortedTotal = students.sort((a, b) => b.total - a.total);
+	const sortedTotal = studentsData.sort((a, b) => b.total - a.total);
 
 	const updatedStudentRank = sortedTotal.map((student) => ({
 		...student,
@@ -35,9 +35,9 @@ const processSheet = (student) => ({
 });
 
 const addFields = (students) => {
-	const studentData = students.map(processSheet);
+	const studentsData = students.map(processSheet);
 
-	return updatedSheet(studentData);
+	return updatedSheet(studentsData);
 };
 
 export default addFields;
