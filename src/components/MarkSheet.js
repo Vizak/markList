@@ -1,6 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { React } from 'react';
 import data from '../services/data';
+import addFields from '../services/studentManager';
 
 const headings = [
 	'Name',
@@ -11,20 +12,9 @@ const headings = [
 	'maths',
 	'social',
 	'total',
+	'result',
+	'rank',
 ];
-
-const studentData = data;
-
-const getTotal = (student) => {
-	const { tamil, english, maths, science, social } = student;
-
-	return tamil + english + maths + science + social;
-};
-
-const addFields = () => studentData.map((student) => ({
-	...student,
-	total: getTotal(student),
-}));
 
 const MarkSheet = () =>
 	<div>
@@ -38,7 +28,7 @@ const MarkSheet = () =>
 				</tr>
 			</thead>
 			<tbody>
-				{ addFields().map((student, key) =>
+				{ addFields(data).map((student, key) =>
 					<tr key={ key }>
 						<td className="stringStyle">{student.student}</td>
 						<td className="numberStyle">{student.rollNo}</td>
@@ -48,6 +38,9 @@ const MarkSheet = () =>
 						<td className="numberStyle">{student.maths}</td>
 						<td className="numberStyle">{student.social}</td>
 						<td className="numberStyle">{student.total}</td>
+						<td className="stringStyle">{student.result}</td>
+						<td className="numberStyle">{student.rank}</td>
+
 					</tr>)}
 			</tbody>
 		</table>
