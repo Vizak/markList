@@ -1,6 +1,4 @@
-
 import { React } from 'react';
-import data from '../services/data';
 import addFields from '../services/studentManager';
 import TableHeader from './TableHeader';
 import TableData from './TableData';
@@ -18,8 +16,10 @@ const headings = [
 	'rank',
 ];
 
-const MarkSheet = () =>
-	<div>
+const MarkSheet = (context) => {
+	const { state: { markList }} = context;
+
+	return <div>
 		<table className="titleStyle">
 			<thead>
 				<tr>
@@ -27,9 +27,10 @@ const MarkSheet = () =>
 				</tr>
 			</thead>
 			<tbody>
-				{addFields(data).map(TableData)}
+				{addFields(markList).map(TableData)}
 			</tbody>
 		</table>
 	</div>;
+};
 
 export default MarkSheet;
