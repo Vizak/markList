@@ -17,7 +17,7 @@ const headings = [
 ];
 
 const MarkSheet = (context) => {
-	const { state: { markList }} = context;
+	const { state: { currMarkSheet }} = context;
 
 	return <div>
 		<table className="titleStyle">
@@ -27,7 +27,7 @@ const MarkSheet = (context) => {
 				</tr>
 			</thead>
 			<tbody>
-				{addFields(markList).map(TableData)}
+				{addFields(currMarkSheet).map(TableData)}
 			</tbody>
 		</table>
 	</div>;

@@ -1,6 +1,6 @@
 const data = [
 	{
-		student: 'Vishnu',
+		name: 'Vishnu',
 		rollNo: 19,
 		tamil: 80,
 		english: 90,
@@ -10,7 +10,7 @@ const data = [
 
 	},
 	{
-		student: 'Megha',
+		name: 'Megha',
 		rollNo: 16,
 		tamil: 90,
 		english: 87,
@@ -20,7 +20,7 @@ const data = [
 
 	},
 	{
-		student: 'Kavya',
+		name: 'Kavya',
 		rollNo: 18,
 		tamil: 60,
 		english: 90,
@@ -30,7 +30,7 @@ const data = [
 
 	},
 	{
-		student: 'mani',
+		name: 'mani',
 		rollNo: 20,
 		tamil: 79,
 		english: 80,

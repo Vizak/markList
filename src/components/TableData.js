@@ -1,10 +1,10 @@
 
 import { React } from 'react';
-const TableData = ({ student, rollNo, tamil, english, maths, science, social,
+const TableData = ({ name, rollNo, tamil, english, maths, science, social,
 	total, result, rank },
 key) =>
 	<tr key={ key }>
-		<td className="stringStyle">{student}</td>
+		<td className="stringStyle">{name}</td>
 		<td className="numberStyle">{rollNo}</td>
 		<td className="numberStyle">{tamil}</td>
 		<td className="numberStyle">{english}</td>
