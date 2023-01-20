@@ -2,12 +2,12 @@ import { React, useState } from 'react';
 import './App.scss';
 import AddButton from './components/AddButton';
 import MarkSheet from './components/MarkSheet';
-import TextBox from './components/TextBox';
 import data from './services/data';
 
 const initialMarkSheet = {
 	currMarkSheet: data,
 	marks: {
+		id: '',
 		rollNo: 5,
 		name: '',
 		tamil: 0,
@@ -24,7 +24,6 @@ const App = (context) => {
 
 	return <div className="App" role="App">
 		<MarkSheet { ...extendedContext }/>
-		<TextBox { ...extendedContext }/>
 		<AddButton { ...extendedContext }/>
 	</div>;
 };

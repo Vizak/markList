@@ -5,12 +5,11 @@ const TextBox = (context) => {
 	const { marks } = state;
 
 	return headers.map((header, key) => <span key={ key }>
-		<label>{header}:</label>
 		<input
 			type="text"
 			onChange={ (event) => setState({
 				...state,
-				marks: { ...marks, [header]: Number(event.target.value) },
+				marks: { ...marks, [header]: event.target.value },
 			}) }
 		/>
 	</span>);

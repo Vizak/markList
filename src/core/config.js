@@ -1,5 +1,5 @@
 const config = {
-	maxNum: 100,
+	idLength: 5,
 	headers: ['name',
 		'rollNo',
 		'tamil',

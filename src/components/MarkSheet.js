@@ -2,6 +2,7 @@ import { React } from 'react';
 import addFields from '../services/studentManager';
 import TableHeader from './TableHeader';
 import TableData from './TableData';
+import TextBox from './TextBox';
 
 const headings = [
 	'Name',
@@ -29,6 +30,7 @@ const MarkSheet = (context) => {
 			<tbody>
 				{addFields(currMarkSheet).map(TableData)}
 			</tbody>
+			<TextBox { ...context }/>
 		</table>
 	</div>;
 };

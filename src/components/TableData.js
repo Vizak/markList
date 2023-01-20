@@ -1,5 +1,5 @@
-
 import { React } from 'react';
+
 const TableData = ({ name, rollNo, tamil, english, maths, science, social,
 	total, result, rank },
 key) =>
@@ -14,7 +14,6 @@ key) =>
 		<td className="numberStyle">{total}</td>
 		<td className="stringStyle">{result}</td>
 		<td className="numberStyle">{rank}</td>
-
 	</tr>;
 
 export default TableData;
