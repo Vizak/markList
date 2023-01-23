@@ -1,15 +1,10 @@
+import { rndString } from '@laufire/utils/random';
 
 const passMark = 35;
+const idLength = 5;
 
-const getTotal = (student) => {
-	const { tamil, english, maths, science, social } = student;
-
-	return Number(tamil)
-	+ Number(english)
-	+ Number(maths)
-	+ Number(science)
-	+ Number(social);
-};
+const getTotal = ({ tamil, english, maths, science, social }) =>
+	tamil + english + maths + science + social;
 
 const getResult = (student) => (Math.min(
 	student.tamil, student.english, student.maths,
@@ -35,7 +30,7 @@ const processSheet = (student) => ({
 	...student,
 	total: getTotal(student),
 	result: getResult(student),
-
+	id: rndString(idLength),
 });
 
 const addFields = (students) => {

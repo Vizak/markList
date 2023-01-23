@@ -1,12 +1,18 @@
 const config = {
-	idLength: 5,
-	headers: ['name',
+	inputs: [
+		'name',
 		'rollNo',
 		'tamil',
 		'english',
 		'science',
 		'maths',
-		'social'],
+		'social',
+	],
+	headings: [
+		'total',
+		'result',
+		'rank',
+	],
 };
 
 export default config;

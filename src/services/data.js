@@ -38,6 +38,7 @@ const data = [
 		maths: 93,
 		social: 86,
 	},
+
 ];
 
 export default data;

@@ -1,18 +1,22 @@
 import { React } from 'react';
 
 const TextBox = (context) => {
-	const { config: { headers }, state, setState } = context;
-	const { marks } = state;
+	const { config: { inputs }, state, setState } = context;
+	const { currentMark } = state;
 
-	return headers.map((header, key) => <span key={ key }>
+	return inputs.map((input, key) => <td key={ key }>
 		<input
-			type="text"
-			onChange={ (event) => setState({
-				...state,
-				marks: { ...marks, [header]: event.target.value },
-			}) }
+			{ ...{ type: 'text',
+				value: currentMark[input],
+				onChange: ({ target: { value }}) => setState({
+					...state,
+					currentMark: { ...currentMark, [input]: input !== 'name'
+						? Number(value)
+						: value },
+				}) } }
+
 		/>
-	</span>);
+	</td>);
 };
 
 export default TextBox;

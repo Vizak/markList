@@ -2,35 +2,23 @@ import { React } from 'react';
 import addFields from '../services/studentManager';
 import TableHeader from './TableHeader';
 import TableData from './TableData';
-import TextBox from './TextBox';
-
-const headings = [
-	'Name',
-	'RollNo',
-	'tamil',
-	'english',
-	'science',
-	'maths',
-	'social',
-	'total',
-	'result',
-	'rank',
-];
+import Empty from './Empty';
 
 const MarkSheet = (context) => {
-	const { state: { currMarkSheet }} = context;
+	const { state: { markSheet }, config: { inputs, headings }} = context;
+	const combinedInput = [...inputs, ...headings];
 
 	return <div>
 		<table className="titleStyle">
 			<thead>
-				<tr>
-					{headings.map(TableHeader)}
-				</tr>
+				<tr>{combinedInput.map(TableHeader)}</tr>
+				<Empty { ...context }/>
 			</thead>
 			<tbody>
-				{addFields(currMarkSheet).map(TableData)}
+				{addFields(markSheet).map((marks, index) =>
+					TableData({ ...context,
+						data: { marks, index, combinedInput }}))}
 			</tbody>
-			<TextBox { ...context }/>
 		</table>
 	</div>;
 };
