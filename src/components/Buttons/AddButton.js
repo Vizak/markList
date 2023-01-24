@@ -10,7 +10,8 @@ const AddButton = (context) => {
 				...state,
 				markSheet: [...markSheet, currentMark],
 			}) }
-		>Add
+		>
+		Add
 		</button>);
 };
 
