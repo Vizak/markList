@@ -1,4 +1,4 @@
-const data = [
+const markList = [
 	{
 		name: 'Vishnu',
 		rollNo: 19,
@@ -41,4 +41,4 @@ const data = [
 
 ];
 
-export default data;
+export default markList;

@@ -1,11 +1,11 @@
 import { React } from 'react';
-import AddButton from './AddButton';
+import AddButton from './Buttons/AddButton';
 import EmptyCells from './EmptyCells';
-import TextBox from './TextBox';
+import Input from './Input/Index';
 
 const Empty = (context) =>
 	<tr>
-		<TextBox { ...context }/>
+		<Input { ...context }/>
 		<EmptyCells/>
 		<EmptyCells/>
 		<EmptyCells/>

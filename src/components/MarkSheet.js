@@ -5,19 +5,19 @@ import TableData from './TableData';
 import Empty from './Empty';
 
 const MarkSheet = (context) => {
-	const { state: { markSheet }, config: { inputs, headings }} = context;
-	const combinedInput = [...inputs, ...headings];
+	const { state: { markSheet }, config: { fields }} = context;
 
 	return <div>
 		<table className="titleStyle">
 			<thead>
-				<tr>{combinedInput.map(TableHeader)}</tr>
+				<tr>{fields.map((field) =>
+					TableHeader({ data: { field }}))}</tr>
 				<Empty { ...context }/>
 			</thead>
 			<tbody>
 				{addFields(markSheet).map((marks, index) =>
 					TableData({ ...context,
-						data: { marks, index, combinedInput }}))}
+						data: { marks, index, fields }}))}
 			</tbody>
 		</table>
 	</div>;

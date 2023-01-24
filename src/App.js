@@ -1,10 +1,11 @@
+/* eslint-disable no-magic-numbers */
 import { React, useState } from 'react';
 import './App.scss';
 import MarkSheet from './components/MarkSheet';
-import data from './services/data';
+import addId from './services/addId';
 
-const initialMarkSheet = {
-	markSheet: data,
+const initialMarkSheet = (context) => ({
+	markSheet: addId(context),
 	currentMark: {
 		name: 'vikas',
 		rollNo: 5,
@@ -14,10 +15,10 @@ const initialMarkSheet = {
 		science: 90,
 		social: 98,
 	},
-};
+});
 
 const App = (context) => {
-	const [state, setState] = useState(initialMarkSheet);
+	const [state, setState] = useState(initialMarkSheet(context));
 	const extendedContext = { ...context, state, setState };
 
 	return <div className="App" role="App">

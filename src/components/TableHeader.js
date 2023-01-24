@@ -1,8 +1,8 @@
 import { React } from 'react';
 
-const TableHeader = (title, index) =>
-	<th key={ index } className="tableHeaderStyle">
-		{title}
+const TableHeader = ({ data: { field }}) =>
+	<th className="tableHeaderStyle">
+		{field.name}
 	</th>;
 
 export default TableHeader;
