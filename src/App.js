@@ -1,12 +1,11 @@
-/* eslint-disable no-magic-numbers */
 import { React, useState } from 'react';
 import './App.scss';
-import MarkSheet from './components/MarkSheet';
-import addId from './services/addId';
+import MarkSheet from './components/Table/MarkSheet';
+import MarkSheetManager from './services/MarkSheetManager';
 
 const initialMarkSheet = (context) => ({
-	markSheet: addId(context),
-	currentMark: {
+	markSheet: MarkSheetManager.addId(context),
+	currentMarkSheet: {
 		name: 'vikas',
 		rollNo: 5,
 		tamil: 70,

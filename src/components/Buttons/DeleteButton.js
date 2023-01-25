@@ -1,5 +1,5 @@
 import { React } from 'react';
-import removeSheet from '../../services/removeSheet';
+import MarkSheetManager from '../../services/MarkSheetManager';
 
 const DeleteButton = (context) => {
 	const { state, setState } = context;
@@ -8,7 +8,7 @@ const DeleteButton = (context) => {
 		<button
 			onClick={ () => setState({
 				...state,
-				markSheet: removeSheet(context),
+				markSheet: MarkSheetManager.removedMarkSheet(context),
 			}) }
 		>Delete
 		</button>);

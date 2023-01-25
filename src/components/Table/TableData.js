@@ -1,10 +1,10 @@
 import { React } from 'react';
-import DeleteButton from './Buttons/DeleteButton';
+import DeleteButton from '../Buttons/DeleteButton';
 
 const TableData = (context) => {
 	const { data: { marks, index, fields }} = context;
 
-	return <tr key={ index } className="stringStyle">
+	return <tr key={ index } className="markSheet">
 		{fields.map((field, key) =>
 			<td key={ key } className="numberStyle">{marks[field.name]}</td>)}
 		<DeleteButton { ...context }/>

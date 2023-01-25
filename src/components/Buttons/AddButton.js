@@ -1,17 +1,23 @@
+import { peek } from '@laufire/utils/debug';
+import { rndString } from '@laufire/utils/random';
 import { React } from 'react';
 
 const AddButton = (context) => {
-	const { state, setState } = context;
-	const { markSheet, currentMark } = state;
+	const { state, setState, config: { idLength }} = context;
+	const { markSheet, currentMarkSheet } = state;
 
+	peek(state);
 	return (
 		<button
 			onClick={ () => setState({
 				...state,
-				markSheet: [...markSheet, currentMark],
+				markSheet: [...markSheet,
+					{
+						...currentMarkSheet,
+						id: rndString(idLength),
+					}],
 			}) }
-		>
-		Add
+		>Add
 		</button>);
 };
 

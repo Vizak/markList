@@ -1,16 +1,18 @@
+import { peek } from '@laufire/utils/debug';
 import { React } from 'react';
 
 const InputBox = (context) => {
 	const { data: field, state, setState } = context;
-	const { currentMark } = state;
+	const { currentMarkSheet } = state;
 
+	peek(currentMarkSheet);
 	return (
 		<input
 			{ ...{ type: field.type,
-				value: currentMark[field.name],
+				value: currentMarkSheet[field.name],
 				onChange: ({ target: { value }}) => setState({
 					...state,
-					currentMark: { ...currentMark,
+					currentMark: { ...currentMarkSheet,
 						[field.name]: field.type === 'number'
 							? Number(value)
 							: value },

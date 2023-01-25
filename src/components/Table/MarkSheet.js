@@ -1,5 +1,5 @@
 import { React } from 'react';
-import addFields from '../services/studentManager';
+import MarkSheetManager from '../../services/MarkSheetManager';
 import TableHeader from './TableHeader';
 import TableData from './TableData';
 import Empty from './Empty';
@@ -15,7 +15,7 @@ const MarkSheet = (context) => {
 				<Empty { ...context }/>
 			</thead>
 			<tbody>
-				{addFields(markSheet).map((marks, index) =>
+				{MarkSheetManager.addFields(markSheet).map((marks, index) =>
 					TableData({ ...context,
 						data: { marks, index, fields }}))}
 			</tbody>
